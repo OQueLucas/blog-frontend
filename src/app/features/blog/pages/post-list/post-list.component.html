@@ -1,0 +1,11 @@
+<section class="max-w-3xl mx-auto px-4 py-8 bg-white dark:bg-gray-900">
+  <h1 class="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+    Publicações recentes
+  </h1>
+
+  <div class="grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-700">
+    @for (post of posts(); track post.id) {
+    <app-post-card [post]="post" />
+    }
+  </div>
+</section>
