@@ -1,0 +1,14 @@
+<header
+  class="flex justify-between items-center px-4 py-2 bg-white dark:bg-gray-800 shadow"
+>
+  <a [routerLink]="['/']" aria-label="Página inicial">
+    <h1
+      routerLinkActive="router-link-active"
+      class="text-lg font-bold text-gray-900 dark:text-white"
+    >
+      Meu Blog
+    </h1>
+  </a>
+
+  <app-theme-toggle />
+</header>

@@ -1,0 +1,14 @@
+<button
+  class="rounded-full p-2 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-gray-500 dark:focus:ring-gray-300"
+  (click)="toggle()"
+  [attr.aria-label]="
+    theme() === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'
+  "
+  type="button"
+>
+  @if (theme() === 'light') {
+  <icon-sun size="24" />
+  } @else {
+  <icon-moon size="24" />
+  }
+</button>
