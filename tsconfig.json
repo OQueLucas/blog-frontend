@@ -19,7 +19,9 @@
     "module": "ES2022",
     "baseUrl": "./src",
     "paths": {
-      "@layout/*": ["app/layout/*"]
+      "@env/*": ["environments/*"],
+      "@layout/*": ["app/layout/*"],
+      "@blog-feature/*": ["app/features/blog/*"]
     }
   },
   "angularCompilerOptions": {
