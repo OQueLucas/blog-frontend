@@ -10,6 +10,31 @@ export interface Post {
   commentCount: number;
 }
 
+export interface PostDetail {
+  id: number;
+  title: string;
+  content: string;
+  excerpt: string;
+  createdAt: string;
+  author: Author;
+  categories: string[];
+  tags: string[];
+  comments?: PostComment[];
+}
+
+export interface PostComment {
+  author: Author;
+  text: string;
+  createdAt: string;
+}
+
+export interface sendComment {
+  comment: string;
+  authorId: number;
+  postId: number;
+  parentCommentId: number | null;
+}
+
 export interface Author {
   id: number;
   name: string;
