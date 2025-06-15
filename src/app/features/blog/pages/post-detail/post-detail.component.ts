@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
-import { PostDetail, sendComment } from '@blog-feature/models/post';
+import { PostModel, PostCommentRequest } from '@blog-feature/data';
 import { ActivatedRoute } from '@angular/router';
-import { BlogService } from '@blog-feature/service/blog.service';
+import { BlogService } from '@blog-feature/services/blog.service';
 import {
   FormBuilder,
   FormGroup,
@@ -12,12 +12,12 @@ import {
 
 @Component({
   selector: 'app-post-detail',
-  imports: [FormsModule, FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './post-detail.component.html',
   styleUrl: './post-detail.component.scss',
 })
 export class PostDetailComponent {
-  post = signal<PostDetail | undefined>(undefined);
+  post = signal<PostModel | undefined>(undefined);
   commentForm!: FormGroup;
 
   successMessage = '';
@@ -28,7 +28,7 @@ export class PostDetailComponent {
   private blogService = inject(BlogService);
   private fb = inject(FormBuilder);
 
-  get postData(): PostDetail | undefined {
+  get postData(): PostModel | undefined {
     return this.post();
   }
 
@@ -51,7 +51,7 @@ export class PostDetailComponent {
 
     this.isSubmitting.set(true);
 
-    const newComment: sendComment = {
+    const newComment: PostCommentRequest = {
       authorId: 7,
       comment: this.commentForm.value.content,
       postId: this.post()!.id,
