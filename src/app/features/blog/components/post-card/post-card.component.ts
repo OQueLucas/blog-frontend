@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
-import { Post } from '@blog-feature/models/post';
 import { RouterModule } from '@angular/router';
+import { PostSummaryResponse } from '@blog-feature/data';
 
 @Component({
   selector: 'app-post-card',
@@ -9,5 +9,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './post-card.component.scss',
 })
 export class PostCardComponent {
-  public post = input.required<Post>();
+  public post = input.required<PostSummaryResponse>();
 }

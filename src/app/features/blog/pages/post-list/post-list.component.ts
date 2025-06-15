@@ -1,8 +1,8 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { Post } from '@blog-feature/models/post';
-import { BlogService } from '@blog-feature/service/blog.service';
+import { BlogService } from '@blog-feature/services/blog.service';
 import { PostCardComponent } from '@blog-feature/components/post-card/post-card.component';
 import { RouterModule } from '@angular/router';
+import { PostSummaryResponse } from '@blog-feature/data';
 
 @Component({
   selector: 'app-post-list',
@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './post-list.component.scss',
 })
 export class PostListComponent implements OnInit {
-  posts = signal<Post[]>([]);
+  posts = signal<PostSummaryResponse[]>([]);
 
   constructor(private blogService: BlogService) {}
 

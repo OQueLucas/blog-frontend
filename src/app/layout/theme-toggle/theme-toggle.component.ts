@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ThemeService } from '@layout/service/theme.service';
-import { SunIconComponent } from '../../shared/icons/sun-icon.component';
-import { MoonIconComponent } from '../../shared/icons/moon-icon.component';
+import { SunIconComponent } from '@shared/icons/sun-icon.component';
+import { MoonIconComponent } from '@shared/icons/moon-icon.component';
 
 @Component({
   selector: 'app-theme-toggle',
